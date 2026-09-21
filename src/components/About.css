@@ -1,0 +1,122 @@
+.about {
+  padding: var(--space-10) 0;
+  background: var(--color-neutral-100);
+  position: relative;
+}
+
+.about__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+.about__visual {
+  position: relative;
+}
+
+.about__image-main {
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  box-shadow: 0 30px 60px rgba(26, 22, 18, 0.15);
+}
+
+.about__image-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.about__image-main:hover img {
+  transform: scale(1.05);
+}
+
+.about__badge {
+  position: absolute;
+  bottom: -var(--space-4);
+  right: -var(--space-3);
+  background: var(--color-neutral-900);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  box-shadow: 0 20px 40px rgba(26, 22, 18, 0.2);
+}
+
+.about__badge-year {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--color-secondary);
+  line-height: 1;
+}
+
+.about__badge-text {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-neutral-300);
+}
+
+.about__lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--color-neutral-700);
+  margin: var(--space-3) 0;
+  line-height: 1.5;
+}
+
+.about__body {
+  font-size: 1rem;
+  color: var(--color-neutral-600);
+  margin-bottom: var(--space-3);
+  line-height: 1.7;
+}
+
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--color-neutral-300);
+}
+
+.about__stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.about__stat-value {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--color-secondary);
+  line-height: 1;
+}
+
+.about__stat-label {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-neutral-500);
+}
+
+@media (max-width: 900px) {
+  .about__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  .about__visual { max-width: 500px; margin: 0 auto; }
+  .about__badge { right: 0; bottom: -30px; }
+}
+
+@media (max-width: 600px) {
+  .about__stats { grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+  .about__stat-value { font-size: 2rem; }
+}

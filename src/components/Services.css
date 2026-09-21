@@ -1,0 +1,108 @@
+.services {
+  padding: var(--space-10) 0;
+  background: var(--color-neutral-900);
+  position: relative;
+}
+
+.services__header {
+  margin-bottom: var(--space-5);
+}
+
+.services__header .section-title {
+  color: var(--color-neutral-50);
+}
+
+.services__header .section-label {
+  color: var(--color-secondary);
+}
+
+.services__header .section-label::before {
+  background: var(--color-secondary);
+}
+
+.services__intro {
+  max-width: 700px;
+  margin-bottom: var(--space-7);
+}
+
+.services__intro p {
+  font-size: 1.1rem;
+  color: var(--color-neutral-300);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+}
+
+.service-card {
+  background: var(--color-neutral-800);
+  padding: var(--space-5) var(--space-4);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  border: 1px solid transparent;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-secondary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition);
+}
+
+.service-card:hover {
+  background: var(--color-neutral-700);
+  border-color: rgba(201, 169, 110, 0.2);
+  transform: translateY(-6px);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card__number {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 300;
+  color: rgba(201, 169, 110, 0.2);
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-4);
+  line-height: 1;
+}
+
+.service-card__icon {
+  color: var(--color-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.service-card__title {
+  font-size: 1.25rem;
+  color: var(--color-neutral-50);
+  margin-bottom: var(--space-2);
+}
+
+.service-card__desc {
+  font-size: 0.9rem;
+  color: var(--color-neutral-400);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+@media (max-width: 1000px) {
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 500px) {
+  .services__grid { grid-template-columns: 1fr; }
+}
